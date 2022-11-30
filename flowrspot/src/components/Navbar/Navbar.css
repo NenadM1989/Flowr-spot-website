@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,500&family=Epilogue:wght@500;700&family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,500&family=Epilogue:wght@500;700&family=Roboto&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: Ubuntu;
+}
+.navbar {
+  background-color: #f8f9fa;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  text-decoration: none;
+}
+
+.flowers,
+.favorites,
+.sightings,
+.login {
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+}
+
+.login {
+  color: rgb(234, 167, 158);
+}
+
+button {
+  outline: none;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 8px;
+  margin-right: 1.5rem;
+  color: white;
+  padding-bottom: 3px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  background-color: rgb(234, 167, 158);
+  box-shadow: 0px 15px 20px rgb(234 168 159 / 20%);
+}
