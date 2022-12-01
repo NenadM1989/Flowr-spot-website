@@ -1,7 +1,7 @@
 import React from "react";
 
-const LatestSightings = () => {
+const Sightings = () => {
   return <div>LatestSightings</div>;
 };
 
-export default LatestSightings;
+export default Sightings;

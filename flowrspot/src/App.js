@@ -1,17 +1,25 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import Flowers from "./components/Flowers/Flowers";
+import Favorites from "./components/Favorites";
+import Sightings from "./components/Sightings";
 
-const App = () => {
+function App() {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <Route path="/" exact element={<Home />} />
-      </Switch>
-    </Router>
+    <div className="App">
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route path="/" exact component={() => <Home />} />
+          <Route path="/flowers" exact component={() => <Flowers />} />
+          <Route path="/favorites" exact component={() => <Favorites />} />
+          <Route path="/sightings" exact component={() => <Sightings />} />
+        </Switch>
+      </BrowserRouter>
+    </div>
   );
-};
+}
 
 export default App;
