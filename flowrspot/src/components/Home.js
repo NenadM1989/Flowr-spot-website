@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
+import image from "../images/hero.png";
+import Search from "./Search";
 
 function Home() {
   const [flowers, setFlowers] = useState({});
@@ -16,15 +18,14 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <div className="div-image">
-        <h1>Discover flowers around you</h1>
-        <h4>Explore between more than 8.427 sightings</h4>
-        <input
-          type="text"
-          className="input"
-          placeholder="Looking for something specific?"
-        ></input>
+    <div className="hero-container">
+      <div className="hero-image">
+        <img className="hero-image-picture" src={image} />
+        <div className="hero-content">
+          <h1>Discover flowers around you</h1>
+          <h4>Explore between more than 8.427 sightings</h4>
+          <Search />
+        </div>
       </div>
       <div>{JSON.stringify(flowers)}</div>
     </div>
