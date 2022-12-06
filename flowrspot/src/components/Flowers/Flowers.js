@@ -1,7 +1,11 @@
 import React from "react";
 
 const Flowers = () => {
-  return <div>Flowers</div>;
+  return (
+    <div>
+      <div>Flowers</div>
+    </div>
+  );
 };
 
 export default Flowers;

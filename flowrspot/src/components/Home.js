@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
 
-function Home() {
+const Home = () => {
   const [flowers, setFlowers] = useState({});
 
   async function fetchData() {
@@ -29,6 +29,6 @@ function Home() {
       <div>{JSON.stringify(flowers)}</div>
     </div>
   );
-}
+};
 
 export default Home;
