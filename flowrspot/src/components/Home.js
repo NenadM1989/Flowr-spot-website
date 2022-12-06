@@ -3,7 +3,7 @@ import "./Home.css";
 import image from "../images/hero.png";
 import Search from "./Search";
 
-function Home() {
+const Home = () => {
   const [flowers, setFlowers] = useState({});
 
   async function fetchData() {
@@ -30,6 +30,6 @@ function Home() {
       <div>{JSON.stringify(flowers)}</div>
     </div>
   );
-}
+};
 
 export default Home;
