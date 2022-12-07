@@ -19,8 +19,12 @@ const Navbar = () => {
         <Link to="/favorites" className="favorites">
           <li>Favorites</li>
         </Link>
-        <li className="login">Login</li>
-        <button className="button">New Account</button>
+        <Link to="/nenad/" className="login">
+          <li>Login</li>
+        </Link>
+        <li>
+          <button className="button">New Account</button>
+        </li>
       </ul>
     </nav>
   );
