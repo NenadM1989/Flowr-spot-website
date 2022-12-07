@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import Flowers from "./components/Flowers/Flowers";
-import Favorites from "./components/Favorites";
-import Sightings from "./components/Sightings";
+import Home from "./pages/Home/Home";
+import Flowers from "./pages/Flowers";
+import Favorites from "./pages/Favorites";
+import Sightings from "./pages/Sightings";
 
 function App() {
   return (

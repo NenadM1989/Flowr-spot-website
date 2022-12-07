@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import image from "../images/hero.png";
-import Search from "./Search";
+import image from "../../images/hero.png";
+import Search from "../../components/Search/Search";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
@@ -23,11 +23,11 @@ const Home = () => {
         <img className="hero-image-picture" src={image} />
         <div className="hero-content">
           <h1>Discover flowers around you</h1>
-          <h4>Explore between more than 8.427 sightings</h4>
+          <p>Explore between more than 8.427 sightings</p>
           <Search />
         </div>
       </div>
-      <div>{JSON.stringify(flowers)}</div>
+      <div className="list">{JSON.stringify(flowers)}</div>
     </div>
   );
 };

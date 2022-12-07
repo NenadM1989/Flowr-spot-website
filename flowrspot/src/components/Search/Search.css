@@ -18,6 +18,7 @@
 
 .input::placeholder {
   font-size: 1rem;
+  color: #949ea0;
 }
 
 .image {

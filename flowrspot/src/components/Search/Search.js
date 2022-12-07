@@ -1,6 +1,6 @@
 import React from "react";
-import "../styles/Search.css";
-import image from "../images/Vector3.png";
+import "../../components/Search/Search.css";
+import image from "../../images/Vector3.png";
 
 const Search = () => {
   return (
