@@ -3,6 +3,7 @@ import "./Home.css";
 import image from "../../images/hero.png";
 import Search from "../../components/Search/Search";
 import { fetchData } from "../../api/APIUtils";
+import Card from "../../components/Card/Card";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
@@ -10,6 +11,10 @@ const Home = () => {
   useEffect(() => {
     fetchData().then((res) => setFlowers(res));
   }, []);
+
+  if (flowers.flowers) {
+    console.log(flowers.flowers[0]);
+  }
 
   return (
     <div className="hero-container">
@@ -20,6 +25,9 @@ const Home = () => {
           <p>Explore between more than 8.427 sightings</p>
           <Search />
         </div>
+      </div>
+      <div className="card-list">
+        <Card />
       </div>
     </div>
   );
