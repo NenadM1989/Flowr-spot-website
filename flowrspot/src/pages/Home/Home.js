@@ -3,7 +3,7 @@ import "./Home.css";
 import image from "../../images/hero.png";
 import Search from "../../components/Search/Search";
 import { fetchData } from "../../api/APIUtils";
-import Card from "../../components/Card/Card";
+import CardList from "../../components/CardList/CardList";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
@@ -27,7 +27,7 @@ const Home = () => {
         </div>
       </div>
       <div className="card-list">
-        <Card />
+        <CardList />
       </div>
     </div>
   );
