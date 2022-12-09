@@ -1,10 +1,10 @@
 import React from "react";
-import "../Buttons/AddNewSightings.css";
+import styles from "../Buttons/AddNewSightings.module.css";
 
 const AddNewSightings = () => {
   return (
-    <div className="wrapper">
-      <button className="button-add">+ Add New Sighting</button>
+    <div className={styles.wrapper}>
+      <button className={styles["button-add"]}>+ Add New Sighting</button>
     </div>
   );
 };

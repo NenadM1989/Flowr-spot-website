@@ -1,28 +1,29 @@
 import React from "react";
-import "../Sightings/Sightings.css";
+import styles from "../Sightings/Sightings.module.css";
 import AddNewSightings from "../../components/Buttons/AddNewSightings";
-//import SightingList from "../../components/SightingList/SightingList";
 
 const Sightings = () => {
   return (
-    <div className="sightings-container">
-      <div className="sightings-top">
-        <div className="sightings-content">
-          <div className="sightings-title">
-            <p className="paragraph first-paragraph">Sighting List</p>
+    <div className={styles["sightings - container"]}>
+      <div className={styles["sightings-top"]}>
+        <div className={styles["sightings-content"]}>
+          <div className={styles["sightings-title"]}>
+            <p className={`${styles.paragraph} ${styles["first-paragraph"]}`}>
+              Sighting List
+            </p>
           </div>
-          <div className="button-add">
+          <div className={styles["button-add"]}>
             <AddNewSightings />
           </div>
         </div>
-        <div className="sightings-explore">
-          <p className="paragraph second-paragraph">
+        <div className={styles["sightings-explore"]}>
+          <p className={`${styles.paragraph} ${styles["second-paragraph"]}`}>
             Explore between 8,427 sightings
           </p>
         </div>
       </div>
       <div></div>
-      <div className="sighting-button">
+      <div className={styles["sighting-button"]}>
         <AddNewSightings />
       </div>
     </div>
