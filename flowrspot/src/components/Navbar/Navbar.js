@@ -1,6 +1,6 @@
 import React from "react";
-import "./Navbar.css";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
 
 const Navbar = () => {
