@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Flowers from "./pages/Flowers/Flowers";
-import Favorites from "./pages/Favorites";
+import Favorites from "./pages/Favorites/Favorites";
 import Sightings from "./pages/Sightings/Sightings";
 import ErrorPage from "./pages/404/404";
 
