@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
+import Modal from "../Modal/Modal";
 
 const Navbar = () => {
   return (
