@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-import image from "../../images/hero.png";
-import Search from "../../components/Search/Search";
+//import image from "../../images/hero.png";
+//import Search from "../../components/Search/Search";
 import { fetchData } from "../../api/APIUtils";
-import CardList from "../../components/CardList/CardList";
+//import CardList from "../../components/CardList/CardList";
+//import Login from "../Login/Login";
+//import CreateAnAccount from "../CreateAnAccount/CreateAnAccount";
+import Profile from "../Profile/Profile";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
@@ -18,17 +21,8 @@ const Home = () => {
 
   return (
     <div className="hero-container">
-      <div className="hero-image">
-        <img className="hero-image-picture" src={image} />
-        <div className="hero-content">
-          <h1>Discover flowers around you</h1>
-          <p>Explore between more than 8.427 sightings</p>
-          <Search />
-        </div>
-      </div>
-      <div className="card-list">
-        <CardList />
-      </div>
+      <div className="card-list"></div>
+      <Profile />
     </div>
   );
 };

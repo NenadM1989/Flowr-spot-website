@@ -10,6 +10,11 @@ const CreateAnAccount = () => {
         <input placeholder="Last Name" />
       </div>
       <div className={styles.column}>
+        <input
+          placeholder="Date of Birth"
+          type="date"
+          className={styles.date}
+        />
         <input placeholder="Email Address" />
         <input type="password" placeholder="Password" />
         <button className={styles.button}>Create Account</button>
