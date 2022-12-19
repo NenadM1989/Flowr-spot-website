@@ -2,19 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import image from "../../images/hero.png";
 import Search from "../../components/Search/Search";
+import { fetchData } from "../../api/APIUtils";
+import Card from "../../components/Card/Card";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
 
-  async function fetchData() {
-    const res = await fetch(
-      "https://flowrspot-api.herokuapp.com/api/v1/flowers"
-    );
-    res.json().then((res) => setFlowers(res));
-  }
-
   useEffect(() => {
-    fetchData();
+    fetchData().then((res) => setFlowers(res));
   }, []);
 
   return (
@@ -27,7 +22,9 @@ const Home = () => {
           <Search />
         </div>
       </div>
-      <div className="list">{JSON.stringify(flowers)}</div>
+      <div className="card-list">
+        <Card />
+      </div>
     </div>
   );
 };
