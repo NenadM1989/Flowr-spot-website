@@ -11,6 +11,7 @@ html {
 }
 .navbar {
   background-color: #ffffff;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: row;
@@ -33,24 +34,24 @@ html {
 .favorites,
 .sightings,
 .login {
-  color: rgba(0, 0, 0, 0.5);
+  color: #949ea0;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  font-weight: 400;
+  font-size: 14px;
 }
 
 .login {
-  color: rgb(234, 167, 158);
+  color: #df9186;
 }
 
 button {
+  width: 140px;
   outline: none;
   border: none;
   text-align: center;
   text-decoration: none;
-  border-radius: 50px;
   margin: auto;
   margin-top: 8px;
   margin-right: 1.5rem;
@@ -58,10 +59,14 @@ button {
   padding-bottom: 3px;
   padding-left: 15px;
   padding-right: 15px;
-  height: 30px;
-  background-color: rgb(221, 137, 128);
-  box-shadow: 0px 15px 20px rgb(234 168 159 / 20%);
+  height: 40px;
+  background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+  box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+  border-radius: 50px;
   cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Ubuntu", sans-serif;
 }
 
 button:hover {

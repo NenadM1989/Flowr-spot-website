@@ -19,9 +19,11 @@ const Navbar = () => {
         <Link to="/favorites" className="favorites">
           <li>Favorites</li>
         </Link>
-        <Link to="/nenad/" className="login">
+
+        <Link to="/" className="login">
           <li>Login</li>
         </Link>
+
         <li>
           <button className="button">New Account</button>
         </li>
