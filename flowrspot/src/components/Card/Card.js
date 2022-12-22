@@ -24,6 +24,7 @@ const Card = () => {
           <p className={styles.paragraph}>127 sightings</p>
         </div>
       </div>
+
     </div>
   );
 };

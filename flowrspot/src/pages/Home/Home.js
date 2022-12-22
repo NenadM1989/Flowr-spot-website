@@ -17,7 +17,6 @@ const Home = () => {
   if (flowers.flowers) {
     console.log(flowers.flowers[0]);
   }
-
   return (
     <div className="hero-container">
       <div className="hero-image">

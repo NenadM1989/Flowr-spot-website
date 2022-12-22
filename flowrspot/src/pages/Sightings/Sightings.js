@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../Sightings/Sightings.module.css";
 import AddNewSightings from "../../components/Buttons/AddNewSightings";
 import image from "../../images/hero-sightings.png";
-
+import CardSighting from "../../components/CardSighting/CardSighting";
 const Sightings = () => {
   return (
     <div className={styles["sightings - container"]}>
@@ -16,6 +16,7 @@ const Sightings = () => {
           <AddNewSightings />
         </div>
       </div>
+      <CardSighting />
     </div>
   );
 };
