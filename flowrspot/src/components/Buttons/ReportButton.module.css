@@ -1,0 +1,21 @@
+.report-button {
+  width: 110px;
+  height: 50px;
+}
+
+.button {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+  box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+  border-radius: 3px;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  border: 0;
+  cursor: pointer;
+}

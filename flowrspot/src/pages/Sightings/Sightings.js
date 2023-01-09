@@ -16,7 +16,30 @@ const Sightings = () => {
           <AddNewSightings />
         </div>
       </div>
-      <CardSighting />
+      <div className={styles["cardsight-list"]}>
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+        <CardSighting />
+      </div>
     </div>
   );
 };

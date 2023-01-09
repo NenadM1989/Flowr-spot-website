@@ -18,13 +18,12 @@ const Card = () => {
           <h3>Ballon Flower</h3>
         </div>
         <div className={styles["latin-name"]}>
-          <p>Platycodon grandiflorus</p>
+          <p className={styles.latin}>Platycodon grandiflorus</p>
         </div>
         <div className={styles.sightings}>
           <p className={styles.paragraph}>127 sightings</p>
         </div>
       </div>
-
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Home = () => {
         <img className="hero-image-picture" src={image} />
         <div className="hero-content">
           <h1>Discover flowers around you</h1>
-          <p>Explore between more than 8.427 sightings</p>
+          <p className="explore">Explore between more than 8.427 sightings</p>
           <Search />
         </div>
       </div>

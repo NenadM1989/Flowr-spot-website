@@ -8,7 +8,7 @@
 
 .image {
   width: 100%;
-  height: 350px;
+  height: 450px;
 }
 
 .sighting-list {
@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   transform: translate(-50%, -50%);
-  top: 30%;
+  top: 40%;
   left: 50%;
   width: 96%;
 }
@@ -43,4 +43,13 @@
   font-size: 17px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
+  margin-top: 30px;
+}
+
+.cardsight-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
 }

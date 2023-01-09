@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
 
-const Navbar = () => {
+const Navbar = ({ funct, func, log }) => {
   return (
     <nav className="navbar">
       <Link to="/">
@@ -19,14 +19,28 @@ const Navbar = () => {
         <Link to="/favorites" className="favorites">
           <li>Favorites</li>
         </Link>
-
-        <Link to="/" className="login">
-          <li>Login</li>
-        </Link>
-
-        <li>
-          <button className="button">New Account</button>
-        </li>
+        {!log && (
+          <>
+            <Link
+              onClick={() => {
+                funct(true);
+              }}
+              className="login"
+            >
+              <li>Login</li>
+            </Link>
+            <li>
+              <button
+                onClick={() => {
+                  func(true);
+                }}
+                className="button"
+              >
+                New Account
+              </button>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );

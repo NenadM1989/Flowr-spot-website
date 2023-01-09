@@ -4,7 +4,7 @@ import styles from "./LikeButton.css";
 const LikeButton = () => {
   return (
     <div className={styles.favorite}>
-      <i className="fa fa-star"></i>
+      <i className="fa fa-star star"></i>
     </div>
   );
 };
