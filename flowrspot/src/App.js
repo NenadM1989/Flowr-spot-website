@@ -12,6 +12,7 @@ import Modal from "./components/Modal/Modal";
 import FlowerDetail from "./pages/FlowerDetail/FlowerDetail";
 import User from "./pages/User/User";
 import Profile from "./pages/Profile/Profile";
+import SightingDetail from "./pages/SightingDetail/SightingDetail";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -64,6 +65,11 @@ const App = () => {
           <Route path="/flowers" exact component={() => <Flowers />} />
           <Route path="/favorites" exact component={() => <Favorites />} />
           <Route path="/sightings" exact component={() => <Sightings />} />
+          <Route
+            path="/sighting-detail"
+            exact
+            component={() => <SightingDetail />}
+          />
           <Route path="/user" exact component={() => <User />} />
           <Route
             path="/flowerdetail"

@@ -4,8 +4,7 @@ import image from "../../images/hero.png";
 import Search from "../../components/Search/Search";
 import { fetchData } from "../../api/APIUtils";
 import CardList from "../../components/CardList/CardList";
-//import Login from "../Login/Login";
-//import CreateAnAccount from "../CreateAnAccount/CreateAnAccount";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [flowers, setFlowers] = useState({});
@@ -22,7 +21,9 @@ const Home = () => {
       <div className="hero-image">
         <img className="hero-image-picture" src={image} />
         <div className="hero-content">
-          <h1>Discover flowers around you</h1>
+          <Link to="/user">
+            <h1>Discover flowers around you</h1>
+          </Link>
           <p className="explore">Explore between more than 8.427 sightings</p>
           <Search />
         </div>

@@ -17,7 +17,12 @@ const User = () => {
             <p className={styles.graph2}>47 sightings</p>
           </div>
         </div>
-        <ReportButton />
+        <ReportButton color="white" background="#DF9186">
+          Report
+        </ReportButton>
+        <ReportButton color="#DF9186" background="white">
+          Report
+        </ReportButton>
       </div>
       <div className={styles.list}>
         <CardSighting />

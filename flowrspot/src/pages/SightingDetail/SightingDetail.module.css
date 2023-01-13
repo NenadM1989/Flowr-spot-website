@@ -1,0 +1,116 @@
+.map {
+  background: linear-gradient(
+      180deg,
+      rgba(249, 249, 249, 0.0001) 0%,
+      #f9f9f9 100%
+    ),
+    url(../../images/sighting-map.png);
+
+  background-size: cover;
+  height: 30rem;
+  position: relative;
+}
+
+.pin {
+  width: 2rem;
+  position: absolute;
+  top: 16rem;
+  left: 40%;
+}
+
+.view,
+.report {
+  border: none;
+  border-radius: 3px;
+  bottom: 8rem;
+  cursor: pointer;
+  font-family: Ubuntu;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  height: 5rem;
+  line-height: 14px;
+  position: absolute;
+  text-align: center;
+}
+
+.view {
+  background: linear-gradient(270deg, #ecbcb3, #eaa79e);
+  box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+  color: #fff;
+  right: 16rem;
+  width: 20rem;
+}
+
+.report {
+  color: #df9186;
+  right: 2rem;
+  width: 11rem;
+  background: #ffffff;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-profile {
+  height: 25rem;
+  display: flex;
+  position: relative;
+
+  border-radius: 3px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: -5rem;
+  background: #ffffff;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.flower {
+  height: 19rem;
+  width: 19rem;
+  margin: 3rem 5rem 3rem 3rem;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-picture {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 6rem;
+}
+
+.image {
+  height: 3rem;
+  margin: 0 2rem 0 0;
+  width: 3rem;
+}
+
+.h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  color: #334144;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.h4 {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  color: #949ea0;
+}
+.paragraph {
+  font-size: 13px;
+  font-style: normal;
+  text-align: justify;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e8e9ed;
+  margin-bottom: 1rem;
+  max-width: 70%;
+  color: #949ea0;
+  font-family: Ubuntu;
+  font-weight: 400;
+  line-height: 20px;
+}

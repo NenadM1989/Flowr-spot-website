@@ -2,12 +2,16 @@ import React from "react";
 import "../../components/CardSighting/CardSighting.css";
 import flower from "../../images/pl-image.png";
 import profile from "../../images/profile-picture.png";
+import { Link } from "react-router-dom";
 
 const CardSighting = () => {
   return (
     <div className="card-sighting">
       <div className="card-picture">
-        <img src={flower} alt="flower" className="card-image" />
+        <Link to="/sighting-detail">
+          <img src={flower} alt="flower" className="card-image" />
+        </Link>
+
         <div className="card-location">
           <i className="fa fa-map-marker" />
           <p>San Francisco, US</p>
