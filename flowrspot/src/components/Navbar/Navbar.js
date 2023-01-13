@@ -22,6 +22,7 @@ const Navbar = ({ funct, func, log }) => {
         {!log && (
           <>
             <Link
+              to="/"
               onClick={() => {
                 funct(true);
               }}

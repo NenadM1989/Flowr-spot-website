@@ -1,26 +1,15 @@
 import React from "react";
 import styles from "../../pages/User/User.module.css";
-import pic from "../../images/profile-picture.png";
 import ReportButton from "../../components/Buttons/ReportButton";
 import CardSighting from "../../components/CardSighting/CardSighting";
+import ProfilePicture from "../../components/ProfilePicture/ProfilePicture";
 
 const User = () => {
   return (
     <div className={styles.user}>
       <div className={styles.row}>
-        <div className={styles.personal}>
-          <div className={styles.photo}>
-            <img src={pic} alt="" width="80px" />
-          </div>
-          <div className={styles.info}>
-            <p className={styles.graph1}>Adam Moore</p>
-            <p className={styles.graph2}>47 sightings</p>
-          </div>
-        </div>
+        <ProfilePicture />
         <ReportButton color="white" background="#DF9186">
-          Report
-        </ReportButton>
-        <ReportButton color="#DF9186" background="white">
           Report
         </ReportButton>
       </div>

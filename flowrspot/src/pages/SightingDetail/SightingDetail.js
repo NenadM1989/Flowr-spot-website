@@ -4,7 +4,7 @@ import styles from "../SightingDetail/SightingDetail.module.css";
 import pin from "../../images/pin.png";
 import flower from "../../images/pl-image.png";
 import profile from "../../images/profile-picture.png";
-import ReportButton from "../../components/Buttons/ReportButton";
+//import ReportButton from "../../components/Buttons/ReportButton";
 
 const SightingDetail = () => {
   return (
@@ -37,7 +37,6 @@ const SightingDetail = () => {
             <CardComments />
           </div>
         </div>
-        <ReportButton />
       </div>
     </div>
   );
