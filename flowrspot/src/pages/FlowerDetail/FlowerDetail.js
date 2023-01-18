@@ -1,30 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import styles from "../../pages/FlowerDetail/FlowerDetail.module.css";
 import hero from "../../images/hero-sightings.png";
-import flower from "../../images/flower-profile.png";
 import LikeButton from "../../components/Buttons/LikeButton";
 import linebreak from "../../images/linebreak.png";
-import CardSighting from "../../components/CardSighting/CardSighting";
+import { RandomFlowerList } from "../../services/services";
 
 const FlowerDetail = () => {
+  const params = useParams();
+  const [flowerInfo, setFlowerInfo] = useState();
+
+  useEffect(() => {
+    RandomFlowerList.getFlowerById(params.id).then((res) => {
+      console.log(res);
+      setFlowerInfo(res.data.flower);
+    });
+  }, [params.id]);
   return (
     <div className={styles["flower-detail"]}>
       <div className={styles["hero-section-flower-detail"]}>
         <img className={styles["hero-img"]} src={hero} alt="" />
         <div className={styles["hero-section-content"]}>
           <div className={styles["flower-image"]}>
-            <img className={styles["flower-img"]} src={flower} alt="" />
+            <img
+              className={styles["flower-img"]}
+              src={flowerInfo?.profile_picture}
+              alt=""
+            />
           </div>
           <div className={styles["flower-profile"]}>
             <div className={styles["flower-detail-left"]}>
               <div className={styles["flower-sighting"]}>
                 <LikeButton />
-                <p className={styles["n-sightings"]}>127 sightings</p>
+                <p className={styles["n-sightings"]}>
+                  {flowerInfo?.sightings} sightings
+                </p>
               </div>
               <div className={styles["flower-name"]}>
                 <div className={styles["flower-name-left"]}>
-                  <h3>Balloon Flower</h3>
-                  <p>Platycodon grandiflorus</p>
+                  <h3>{flowerInfo?.name}</h3>
+                  <p>{flowerInfo?.latin_name}</p>
                 </div>
               </div>
             </div>
@@ -67,30 +82,6 @@ const FlowerDetail = () => {
         <div className={styles["line-break"]}>
           <br className="b" />
           <img src={linebreak} alt="" />
-        </div>
-        <div className={styles["cardsight-list"]}>
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
-          <CardSighting />
         </div>
       </div>
     </div>

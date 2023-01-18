@@ -12,6 +12,7 @@ const CardList = ({ flowers }) => {
           latinName={flower.latin_name}
           profilePicture={flower.profile_picture}
           sightings={flower.sightings}
+          id={flower.id}
         />
       ))}
     </div>

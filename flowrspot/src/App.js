@@ -72,7 +72,7 @@ const App = () => {
           />
           <Route path="/user" exact component={() => <User />} />
           <Route
-            path="/flowerdetail"
+            path="/flowerdetail/:id"
             exact
             component={() => <FlowerDetail />}
           />
