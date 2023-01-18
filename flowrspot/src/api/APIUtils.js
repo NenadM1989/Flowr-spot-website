@@ -1,10 +1,12 @@
-export const fetchData = async function () {
-  const res = await fetch(
+/*export const fetchData = async function () {
+  const response = await fetch(
     "https://flowrspot-api.herokuapp.com/api/v1/flowers"
-  ).then((res) => res.json());
-  return res;
+  );
+  const data = await response.json();
+  console.log(response);
+  return response;
 };
 
 // if (flowers.flowers) {
 //   console.log(flowers.flowers[0]);
-// }
+// }*/

@@ -1,10 +1,10 @@
 import React from "react";
 import "../CardComments/CardComments.css";
 
-const CardComments = () => {
+const CardComments = ({ width }) => {
   return (
-    <div className={"card-comments"}>
-      <div className="comments-favorites">
+    <div className="card-comments">
+      <div className="comments-favorites" style={{ width }}>
         <div className="comment">
           <i className="fa fa-commenting comments" />
           <p className="p">12 comments</p>

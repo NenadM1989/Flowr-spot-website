@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../Sightings/Sightings.module.css";
 import AddNewSightings from "../../components/Buttons/AddNewSightings";
 import image from "../../images/hero-sightings.png";
 import CardSighting from "../../components/CardSighting/CardSighting";
+import { RandomFlowerList } from "../../services/services";
 const Sightings = () => {
+  const [flowers, setFlowers] = useState([]);
+
+  useEffect(() => {
+    RandomFlowerList.getFlowers()
+      .then((data) => setFlowers(data.data.flowers))
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className={styles["sightings - container"]}>
       <img src={image} alt="" className={styles.image} />
@@ -17,28 +25,9 @@ const Sightings = () => {
         </div>
       </div>
       <div className={styles["cardsight-list"]}>
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
-        <CardSighting />
+        {flowers.map((flower) => (
+          <CardSighting key={flower.id} picture={flower.profile_picture} />
+        ))}
       </div>
     </div>
   );

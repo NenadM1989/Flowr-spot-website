@@ -3,7 +3,6 @@
 }
 
 .comments-favorites {
-  width: 30%;
   display: flex;
   justify-content: space-between;
 }
@@ -34,7 +33,6 @@
 
 .comments,
 .heart {
-  margin-right: 5%;
   color: #d4d8d9;
 }
 

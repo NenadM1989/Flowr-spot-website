@@ -8,8 +8,11 @@ const User = () => {
   return (
     <div className={styles.user}>
       <div className={styles.row}>
-        <ProfilePicture />
-        <ReportButton color="white" background="#DF9186">
+        <ProfilePicture width="80px" />
+        <ReportButton
+          color="white"
+          background="linear-gradient(270deg, #ECBCB3 0%, #EAA79E 100%)"
+        >
           Report
         </ReportButton>
       </div>

@@ -34,7 +34,7 @@ const SightingDetail = () => {
             platycodon.[2]
           </div>
           <div>
-            <CardComments />
+            <CardComments width="30%" />
           </div>
         </div>
       </div>

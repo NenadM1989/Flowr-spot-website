@@ -91,7 +91,7 @@ p {
 }
 
 .card-comments {
-  width: 100%;
+  width: 80%;
 }
 
 .comments-favorites {
@@ -134,10 +134,4 @@ p {
 }
 .favorite {
   margin-left: 4rem;
-}
-
-.comments,
-.heart,
-.p {
-  margin-left: 10px;
 }

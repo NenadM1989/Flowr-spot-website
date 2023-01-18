@@ -2,20 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./Home.css";
 import image from "../../images/hero.png";
 import Search from "../../components/Search/Search";
-import { fetchData } from "../../api/APIUtils";
 import CardList from "../../components/CardList/CardList";
 import { Link } from "react-router-dom";
+import { RandomFlowerList } from "../../services/services";
 
 const Home = () => {
-  const [flowers, setFlowers] = useState({});
+  const [flowers, setFlowers] = useState([]);
 
   useEffect(() => {
-    fetchData().then((res) => setFlowers(res));
+    RandomFlowerList.getFlowers()
+      .then((data) => setFlowers(data.data.flowers))
+      .catch((error) => console.log(error));
   }, []);
 
-  if (flowers.flowers) {
-    console.log(flowers.flowers[0]);
-  }
+  /*useEffect(() => {
+    console.log(flowers);
+  }, [flowers]);*/
+
   return (
     <div className="hero-container">
       <div className="hero-image">
@@ -29,7 +32,7 @@ const Home = () => {
         </div>
       </div>
       <div className="list">
-        <CardList />
+        <CardList flowers={flowers} />
       </div>
     </div>
   );
