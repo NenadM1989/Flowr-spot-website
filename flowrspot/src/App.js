@@ -76,6 +76,7 @@ const App = () => {
             exact
             component={() => <FlowerDetail />}
           />
+          <Route path="/profile" exact component={() => <Profile />} />
           <Route path="/*" exact component={() => <ErrorPage />} />
         </Switch>
       </BrowserRouter>

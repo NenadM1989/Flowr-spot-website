@@ -5,19 +5,30 @@ import Search from "../../components/Search/Search";
 import CardList from "../../components/CardList/CardList";
 import { Link } from "react-router-dom";
 import { RandomFlowerList } from "../../services/services";
+import Warning from "../../components/Warning/Warning";
 
 const Home = () => {
   const [flowers, setFlowers] = useState([]);
+  const [term, setTerm] = useState();
 
   useEffect(() => {
-    RandomFlowerList.getFlowers()
-      .then((data) => setFlowers(data.data.flowers))
-      .catch((error) => console.log(error));
-  }, []);
+    if (!term) {
+      RandomFlowerList.getFlowers()
+        .then((data) => setFlowers(data.data.flowers))
+        .catch((error) => console.log(error));
+    }
+    if (term) {
+      RandomFlowerList.getFlowers()
+        .then((data) =>
+          setFlowers(data.data.flowers.filter((flower) => flower.name === term))
+        )
+        .catch((error) => console.log(error));
+    }
+  }, [term]);
 
-  /*useEffect(() => {
-    console.log(flowers);
-  }, [flowers]);*/
+  const searchSubmit = (value) => {
+    setTerm(value);
+  };
 
   return (
     <div className="hero-container">
@@ -28,11 +39,11 @@ const Home = () => {
             <h1>Discover flowers around you</h1>
           </Link>
           <p className="explore">Explore between more than 8.427 sightings</p>
-          <Search />
+          <Search onSubmit={searchSubmit} />
         </div>
       </div>
       <div className="list">
-        <CardList flowers={flowers} />
+        {flowers.length > 0 ? <CardList flowers={flowers} /> : <Warning />}
       </div>
     </div>
   );

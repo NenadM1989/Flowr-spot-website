@@ -2,10 +2,12 @@ import React from "react";
 import styles from "./Profile.module.css";
 import image from "../../images/profile-picture.png";
 
-const Profile = () => {
+const Profile = ({ funct, funcLog }) => {
   return (
     <div className={styles.profile}>
-      <div className={styles.close}>X</div>
+      <div className={styles.close} onClick={() => funct(false)}>
+        X
+      </div>
       <div className={styles["image-name"]}>
         <div className={styles.image}>
           <img src={image} alt="profile-image" />
@@ -29,7 +31,13 @@ const Profile = () => {
           <h3>michael.berry@gmail.com</h3>
         </div>
       </div>
-      <div className={styles.button}>
+      <div
+        className={styles.button}
+        onClick={() => {
+          funct(false);
+          funcLog(false);
+        }}
+      >
         <button>Logout</button>
       </div>
     </div>

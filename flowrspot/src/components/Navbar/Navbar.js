@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
+import image from "../../images/profile-picture.png";
 
-const Navbar = ({ funct, func, log }) => {
+const Navbar = ({ funct, func, log, openProfile }) => {
   return (
     <nav className="navbar">
       <Link to="/">
@@ -40,6 +41,26 @@ const Navbar = ({ funct, func, log }) => {
                 New Account
               </button>
             </li>
+          </>
+        )}
+        {log && (
+          <>
+            <Link
+              onClick={() => {
+                funct(true);
+              }}
+              className="navbar-item-login"
+              to="/"
+            >
+              John Doe
+            </Link>
+            <Link to="/">
+              <img
+                onClick={() => openProfile(true)}
+                src={image}
+                className="navbar-image-login"
+              />
+            </Link>
           </>
         )}
       </ul>

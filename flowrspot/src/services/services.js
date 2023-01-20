@@ -5,6 +5,7 @@ export class RandomFlowerList {
   static async getFlowers() {
     try {
       const flowers = await axios.get(URL);
+      //console.log(flowers);
       return flowers;
     } catch (error) {
       console.log(error);
@@ -12,7 +13,7 @@ export class RandomFlowerList {
   }
 
   static async getFlowerById(id) {
-    console.log(URL);
+    //console.log(URL);
     try {
       const flower = await axios.get(`${URL}/${id}`);
       return flower;

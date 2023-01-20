@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import "../../components/Search/Search.css";
 import image from "../../images/Vector3.png";
 
-const Search = () => {
+const Search = ({ onSubmit }) => {
   const [input, setInput] = useState("");
 
   const submitHandler = (event) => {
     event.preventDefault();
+    onSubmit(input);
     setInput("");
   };
 
-  const inputHandler = (event) => {
-    setInput(event.target.value);
-  };
   return (
     <form className="form" onSubmit={submitHandler}>
       <input
@@ -20,7 +18,7 @@ const Search = () => {
         className="input"
         placeholder="Looking for something specific?"
         value={input}
-        onChange={inputHandler}
+        onChange={(e) => setInput(e.target.value)}
       />
       <img alt="" width="30px" className="image" src={image} />
     </form>

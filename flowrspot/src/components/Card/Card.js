@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import LikeButton from "../Buttons/LikeButton";
 
 const Card = ({ name, latinName, profilePicture, sightings, id }) => {
-  console.log(id);
+  //console.log(id);
   const navigateTo = useHistory();
   return (
     <div

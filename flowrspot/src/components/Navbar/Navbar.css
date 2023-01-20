@@ -72,3 +72,16 @@ button {
 button:hover {
   background-color: rgb(241, 206, 201);
 }
+
+.navbar-item-login {
+  font-size: 14px;
+  text-decoration: none;
+  color: #949ea0;
+  margin-left: 2rem;
+}
+
+.navbar-image-login {
+  width: 40px;
+  margin-left: 2rem;
+  margin-right: 1rem;
+}

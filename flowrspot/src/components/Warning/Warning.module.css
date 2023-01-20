@@ -1,0 +1,12 @@
+.border {
+  margin-top: 50px;
+  width: 35%;
+  position: absolute;
+  left: 35%;
+  padding: 20px;
+}
+
+.header {
+  font-size: 30px;
+  color: green;
+}
