@@ -13,6 +13,7 @@ import FlowerDetail from "./pages/FlowerDetail/FlowerDetail";
 import User from "./pages/User/User";
 import Profile from "./pages/Profile/Profile";
 import SightingDetail from "./pages/SightingDetail/SightingDetail";
+import SingleFlower from "./pages/SingleFlower/SingleFlower";
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -77,6 +78,11 @@ const App = () => {
             component={() => <FlowerDetail />}
           />
           <Route path="/profile" exact component={() => <Profile />} />
+          <Route
+            path="/singleflower"
+            exact
+            component={() => <SingleFlower />}
+          />
           <Route path="/*" exact component={() => <ErrorPage />} />
         </Switch>
       </BrowserRouter>
