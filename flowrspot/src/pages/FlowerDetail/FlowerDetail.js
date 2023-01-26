@@ -12,7 +12,6 @@ const FlowerDetail = () => {
 
   useEffect(() => {
     RandomFlowerList.getFlowerById(params.id).then((res) => {
-      //console.log(res);
       setFlowerInfo(res.data.flower);
     });
   }, [params.id]);
