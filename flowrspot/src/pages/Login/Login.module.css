@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   z-index: 20;
   background-color: #ffffff;
   top: 50%;
@@ -62,4 +65,13 @@
   color: #ffffff;
   cursor: pointer;
   opacity: 0.5;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #949ea0;
+  font-size: 1rem;
+  cursor: pointer;
 }

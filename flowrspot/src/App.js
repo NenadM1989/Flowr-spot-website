@@ -45,15 +45,9 @@ const App = () => {
           log={isLogged}
           openProfile={setOpenProfile}
         />
-        {open && (
-          <Modal>
-            <CreateAnnAccount func={openModalHandler} />
-          </Modal>
-        )}
+        {open && <CreateAnnAccount func={openModalHandler} />}
         {openLogin && (
-          <Modal>
-            <Login funct={openModalLoginHandler} funcLog={setLoggedHandler} />
-          </Modal>
+          <Login funct={openModalLoginHandler} funcLog={setLoggedHandler} />
         )}
 
         {openProfile && (
