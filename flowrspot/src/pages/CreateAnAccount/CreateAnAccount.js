@@ -1,24 +1,38 @@
 import React, { useState } from "react";
 import styles from "./CreateAnAccount.module.css";
 import Modal from "../../components/Modal/Modal";
+import { AuthService } from "../../authService/authService";
 
 const CreateAnAccount = ({ func }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [date, setDate] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showCreateAcc, setShowCreateAcc] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = {
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
+    const data = {
+      email,
+      password,
+      first_name: firstName,
+      last_name: lastName,
+      date_of_birth: date,
     };
-    localStorage.setItem("user", JSON.stringify(user));
-    setFirstName(""), setLastName(""), setEmail(""), setPassword("");
+    try {
+      const response = await AuthService.postRegister(data);
+      localStorage.setItem("token", response.data.auth_token);
+      console.log(response.data.auth_token);
+    } catch (err) {
+      console.log("Error occurred", err);
+    }
+
+    setFirstName(""),
+      setLastName(""),
+      setDate(""),
+      setEmail(""),
+      setPassword("");
     setShowCreateAcc(false);
   };
 
@@ -26,9 +40,6 @@ const CreateAnAccount = ({ func }) => {
     showCreateAcc && (
       <Modal>
         <form className={styles.container} onSubmit={handleSubmit}>
-          <div className={styles.close1} onClick={() => func(false)}>
-            X
-          </div>
           <h1 className={styles.header}>Create an Account</h1>
           <div className={styles.names}>
             <input
@@ -45,6 +56,13 @@ const CreateAnAccount = ({ func }) => {
             />
           </div>
           <div className={styles.column}>
+            <input
+              placeholder="date of birth"
+              className={styles.date}
+              type="date"
+              onChange={(e) => setDate(e.target.value)}
+              value={date}
+            ></input>
             <input
               placeholder="Email Address"
               type="email"
