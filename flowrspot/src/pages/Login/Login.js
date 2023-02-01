@@ -1,23 +1,28 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
 import Modal from "../../components/Modal/Modal";
+import { AuthService } from "../../authService/authService";
 
-const Login = ({ funct }) => {
+const Login = ({ funct, funcLog }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showLogin, setShowLogin] = useState(true);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser.email === email && storedUser.password === password) {
-      console.log(email, password);
-    } else {
-      console.log("Error occurred!");
+    try {
+      const res = await AuthService.postLogin({ email, password });
+      localStorage.setItem("auth_token", res.auth_token);
+      console.log("Success!");
+      funcLog(true);
+    } catch (err) {
+      console.log("Error occurred!", err);
     }
+
     setEmail(""), setPassword("");
     setShowLogin(false);
   };
+
   return (
     showLogin && (
       <Modal>
@@ -39,12 +44,7 @@ const Login = ({ funct }) => {
             />
           </div>
           <div className={styles["login-button"]}>
-            <button
-              type="submit"
-              className={styles.button}
-              //onClick={() => {
-              //            }}
-            >
+            <button type="submit" className={styles.button}>
               Login to your Account
             </button>
           </div>

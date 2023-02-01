@@ -25,7 +25,7 @@ const CreateAnAccount = ({ func }) => {
       localStorage.setItem("token", response.data.auth_token);
       console.log(response.data.auth_token);
     } catch (err) {
-      console.log("Error occurred", err);
+      console.log("Error occurred");
     }
 
     setFirstName(""),
