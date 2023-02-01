@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
 import image from "../../images/profile-picture.png";
 
-const Navbar = ({ funct, func, log, openProfile }) => {
+const Navbar = ({ funct, func, openProfile }) => {
+  const [log, setLog] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("auth_token");
+    if (token) {
+      setLog(true);
+    }
+  }, []);
   return (
     <nav className="navbar">
       <Link to="/">

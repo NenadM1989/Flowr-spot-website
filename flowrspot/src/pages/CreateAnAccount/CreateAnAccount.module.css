@@ -70,10 +70,10 @@
 }
 
 .close {
-  opacity: 0.7;
+  opacity: 0.5;
   cursor: pointer;
   margin-top: 20px;
-  color: #334144;
+  color: #fff;
 }
 
 .date {
