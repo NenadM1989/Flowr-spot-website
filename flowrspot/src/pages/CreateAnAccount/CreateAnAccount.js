@@ -34,6 +34,7 @@ const CreateAnAccount = ({ func }) => {
       setEmail(""),
       setPassword("");
     setShowCreateAcc(false);
+    window.location.reload(false);
   };
 
   return (
@@ -43,12 +44,14 @@ const CreateAnAccount = ({ func }) => {
           <h1 className={styles.header}>Create an Account</h1>
           <div className={styles.names}>
             <input
+              required
               placeholder="First Name"
               type="text"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
             />
             <input
+              required
               placeholder="Last Name"
               type="text"
               value={lastName}
@@ -57,6 +60,7 @@ const CreateAnAccount = ({ func }) => {
           </div>
           <div className={styles.column}>
             <input
+              required
               placeholder="date of birth"
               className={styles.date}
               type="date"
@@ -64,12 +68,14 @@ const CreateAnAccount = ({ func }) => {
               value={date}
             ></input>
             <input
+              required
               placeholder="Email Address"
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
+              required
               type="password"
               placeholder="Password"
               value={password}

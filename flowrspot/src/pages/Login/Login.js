@@ -10,10 +10,11 @@ const Login = ({ funct, funcLog }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const res = await AuthService.postLogin({ email, password });
-      localStorage.setItem("auth_token", res.auth_token);
-      console.log("Success!");
+      localStorage.setItem("auth_token", res.data.auth_token);
+      console.log("Success!", res.data.auth_token);
       funcLog(true);
     } catch (err) {
       console.log("Error occurred!", err);
@@ -21,6 +22,7 @@ const Login = ({ funct, funcLog }) => {
 
     setEmail(""), setPassword("");
     setShowLogin(false);
+    window.location.reload(false);
   };
 
   return (
@@ -33,11 +35,13 @@ const Login = ({ funct, funcLog }) => {
           <h1 className={styles.header}>Welcome Back</h1>
           <div className={styles.data}>
             <input
+              required
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
+              required
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}

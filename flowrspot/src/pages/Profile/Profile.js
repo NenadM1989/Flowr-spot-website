@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Profile.module.css";
 import image from "../../images/profile-picture.png";
 
 const Profile = ({ funct, funcLog }) => {
-  const [isLoggedOut, setIsLoggedOut] = useState(false);
-
   const handleClick = () => {
     funct(false);
     funcLog(false);
     localStorage.removeItem("auth_token");
-    setIsLoggedOut(true);
   };
-
-  useEffect(() => {
-    const authToken = localStorage.getItem("auth_token");
-    if (!authToken) {
-      setIsLoggedOut(true);
-    }
-  }, [isLoggedOut]);
 
   return (
     <div className={styles.profile}>

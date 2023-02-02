@@ -5,16 +5,15 @@ import flowerspot from "../../images/flowerspot.png";
 import image from "../../images/profile-picture.png";
 
 const Navbar = ({ funct, func, openProfile }) => {
-  const [log, setLog] = useState(false);
+  const [log, setLog] = useState();
+
+  const token = localStorage.getItem("auth_token");
 
   useEffect(() => {
-    const token = localStorage.getItem("auth_token");
-    if (token) {
-      setLog(true);
-    } else {
-      setLog(false);
-    }
-  }, [log]);
+    setLog(!!token);
+    console.log("ovo je token", token);
+  }, [token]);
+
   return (
     <nav className="navbar">
       <Link to="/">
