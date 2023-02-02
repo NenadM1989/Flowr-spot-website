@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Profile.module.css";
 import image from "../../images/profile-picture.png";
 
 const Profile = ({ funct, funcLog }) => {
+  const [isLoggedOut, setIsLoggedOut] = useState(false);
+
+  const handleClick = () => {
+    funct(false);
+    funcLog(false);
+    localStorage.removeItem("auth_token");
+    setIsLoggedOut(true);
+  };
+
+  useEffect(() => {
+    const authToken = localStorage.getItem("auth_token");
+    if (!authToken) {
+      setIsLoggedOut(true);
+    }
+  }, [isLoggedOut]);
+
   return (
     <div className={styles.profile}>
       <div className={styles.close} onClick={() => funct(false)}>
@@ -31,13 +47,7 @@ const Profile = ({ funct, funcLog }) => {
           <h3>michael.berry@gmail.com</h3>
         </div>
       </div>
-      <div
-        className={styles.button}
-        onClick={() => {
-          funct(false);
-          funcLog(false);
-        }}
-      >
+      <div className={styles.button} onClick={handleClick}>
         <button>Logout</button>
       </div>
     </div>

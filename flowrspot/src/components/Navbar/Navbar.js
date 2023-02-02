@@ -11,8 +11,10 @@ const Navbar = ({ funct, func, openProfile }) => {
     const token = localStorage.getItem("auth_token");
     if (token) {
       setLog(true);
+    } else {
+      setLog(false);
     }
-  }, []);
+  }, [log]);
   return (
     <nav className="navbar">
       <Link to="/">
