@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styles from "./CreateAnAccount.module.css";
 import Modal from "../../components/Modal/Modal";
 import { AuthService } from "../../authService/authService";
+import { validEmail, validPassword } from "../../Regex";
 
 const CreateAnAccount = ({ func }) => {
   const [firstName, setFirstName] = useState("");
@@ -10,9 +11,25 @@ const CreateAnAccount = ({ func }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showCreateAcc, setShowCreateAcc] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (localStorage.getItem("token")) {
+      setErrorMessage("User is already registred");
+      setLastName(""), setDate(""), setEmail(""), setPassword("");
+      return;
+    }
+
+    if (!validEmail.test(email)) {
+      setErrorMessage("Please enter a valid email address");
+      return;
+    }
+    if (!validPassword.test(password)) {
+      setErrorMessage("Password form is incorrect!");
+      return;
+    }
+
     const data = {
       email,
       password,
@@ -68,19 +85,19 @@ const CreateAnAccount = ({ func }) => {
               value={date}
             ></input>
             <input
-              required
               placeholder="Email Address"
-              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              required
               type="password"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {errorMessage && (
+              <p className={styles.errorMessage}>{errorMessage}</p>
+            )}
             <button type="submit" className={styles.button}>
               Create Account
             </button>

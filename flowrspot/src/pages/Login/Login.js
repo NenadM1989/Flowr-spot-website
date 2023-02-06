@@ -2,14 +2,25 @@ import React, { useState } from "react";
 import styles from "./Login.module.css";
 import Modal from "../../components/Modal/Modal";
 import { AuthService } from "../../authService/authService";
+import { validEmail, validPassword } from "../../Regex";
 
 const Login = ({ funct, funcLog }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showLogin, setShowLogin] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validEmail.test(email)) {
+      setErrorMessage("Please enter a valid email address");
+      return;
+    }
+    if (!validPassword.test(password)) {
+      setErrorMessage("Password form is incorrect!");
+      return;
+    }
 
     try {
       const res = await AuthService.postLogin({ email, password });
@@ -34,18 +45,15 @@ const Login = ({ funct, funcLog }) => {
           </div>
           <h1 className={styles.header}>Welcome Back</h1>
           <div className={styles.data}>
+            <input value={email} onChange={(e) => setEmail(e.target.value)} />
             <input
-              required
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              required
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {errorMessage && (
+              <p className={styles.errorMessage}>{errorMessage}</p>
+            )}
           </div>
           <div className={styles["login-button"]}>
             <button type="submit" className={styles.button}>
