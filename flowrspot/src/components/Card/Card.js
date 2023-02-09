@@ -1,10 +1,24 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 import { useHistory } from "react-router-dom";
-import LikeButton from "../Buttons/LikeButton";
+import { useSelector, useDispatch } from "react-redux";
+import { addToFavorites } from "../../store/flower/actions";
+import { removeFromFavorites } from "../../store/flower/actions";
 
 const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   const [log, setLog] = useState();
+
+  const listOfFavorites = useSelector((state) => state.favorites);
+  const isFavorite = listOfFavorites.includes(id);
+  const dispatch = useDispatch();
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(id));
+    } else {
+      dispatch(addToFavorites(id));
+    }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
@@ -15,7 +29,13 @@ const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   return (
     <>
       <div className={styles.card}>
-        <div className={styles["like-button"]}>{log && <LikeButton />}</div>
+        <div className={styles["like-button"]}>
+          {log && (
+            <div onClick={handleFavoriteClick}>
+              <i className={`fa fa-star ${styles.star}`}></i>
+            </div>
+          )}
+        </div>
 
         <img
           src={profilePicture}
