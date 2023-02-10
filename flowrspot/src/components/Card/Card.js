@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToFavorites } from "../../store/flower/actions";
-import { removeFromFavorites } from "../../store/flower/actions";
+import { addToFavorites } from "../../store/favorite/actions";
+import { removeFromFavorites } from "../../store/favorite/actions";
 
 const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   const [log, setLog] = useState();

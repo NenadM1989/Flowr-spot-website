@@ -34,9 +34,10 @@
 
 h1 {
   color: #fff;
-  font-size: 3rem;
+  font-size: 2.7rem;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 p {
@@ -53,9 +54,9 @@ p {
   margin-top: 30px;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1450px) {
   h1 {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 }
 
@@ -64,3 +65,21 @@ p {
   font-size: 17px;
   font-weight: 300;
 }
+
+@media (max-width: 1200px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+}
+
+@media (max-width: 960px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 870px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+} ;

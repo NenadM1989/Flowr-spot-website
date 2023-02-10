@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import favorites from "./flower/reducers";
+import favorites from "./favorite/reducers";
 
 const rootReducer = combineReducers({
   favorites,
