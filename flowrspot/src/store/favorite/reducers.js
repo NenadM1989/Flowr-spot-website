@@ -1,16 +1,20 @@
-import { ADD_FAVORITE, REMOVE_FAVORITE } from "./constants";
+import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "./constants";
 
-const initialState = [];
+const initialState = { favorites: [] };
 
-const favorites = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_FAVORITE:
-      return [...state, action.payload];
-    case REMOVE_FAVORITE:
-      return state.filter((flowerId) => flowerId !== action.payload);
+const favoritesReducer = (state = initialState, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case ADD_TO_FAVORITES:
+      return { ...state, favorites: [...state.favorites, payload] };
+    case REMOVE_FROM_FAVORITES:
+      return {
+        ...state,
+        favorites: state.favorites.filter((id) => id !== payload),
+      };
     default:
       return state;
   }
 };
 
-export default favorites;
+export default favoritesReducer;

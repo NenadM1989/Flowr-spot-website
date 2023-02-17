@@ -2,37 +2,43 @@ import React, { useState, useEffect } from "react";
 import styles from "./Card.module.css";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { addToFavorites } from "../../store/favorite/actions";
-import { removeFromFavorites } from "../../store/favorite/actions";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../store/favorite/actions";
 
 const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   const [log, setLog] = useState();
-
-  const listOfFavorites = useSelector((state) => state.favorites);
-  const isFavorite = listOfFavorites.includes(id);
+  const navigateTo = useHistory();
   const dispatch = useDispatch();
-
-  const handleFavoriteClick = () => {
-    if (isFavorite) {
-      dispatch(removeFromFavorites(id));
-    } else {
-      dispatch(addToFavorites(id));
-    }
-  };
+  const favorites = useSelector((state) => state.favorites);
+  const isFavorite = favorites.favorites.includes(id);
 
   useEffect(() => {
     const token = localStorage.getItem("auth_token");
     setLog(!!token);
   }, []);
 
-  const navigateTo = useHistory();
+  const handleClick = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorites(id));
+      console.log("added");
+    } else {
+      dispatch(addToFavorites(id));
+    }
+  };
+
   return (
     <>
       <div className={styles.card}>
-        <div className={styles["like-button"]}>
+        <div className={styles["like-button"]} onClick={handleClick}>
           {log && (
-            <div onClick={handleFavoriteClick}>
-              <i className={`fa fa-star ${styles.star}`}></i>
+            <div>
+              <i
+                className={`fa fa-star ${styles.star} ${
+                  isFavorite ? styles.favorite : ""
+                }`}
+              ></i>
             </div>
           )}
         </div>
