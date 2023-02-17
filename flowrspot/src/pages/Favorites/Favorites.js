@@ -17,7 +17,7 @@ const Favorites = () => {
             </p>
           ) : (
             favorites.map((favorite) => {
-              const flower = flowers.find((f) => f.id === favorite);
+              const flower = flowers.find((cvet) => cvet.id === favorite);
               if (flower) {
                 return (
                   <Card
