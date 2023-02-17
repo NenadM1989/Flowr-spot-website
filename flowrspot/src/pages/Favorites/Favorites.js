@@ -5,23 +5,35 @@ import Card from "../../components/Card/Card";
 
 const Favorites = () => {
   const favorites = useSelector((state) => state.favorites.favorites);
+  const flowers = useSelector((state) => state.flowers.flowers);
+
   return (
     <div className={styles.flowers}>
       <div className={styles.list}>
-        {favorites.length === 0 ? (
-          <p>You have no favorite flowers yet!</p>
-        ) : (
-          favorites.map((favorite) => (
-            <Card
-              key={favorite.id}
-              name={favorite.name}
-              latinName={favorite.latinName}
-              profilePicture={favorite.profilePicture}
-              sightings={favorite.sightings}
-              id={favorite.id}
-            />
-          ))
-        )}
+        <div className={styles.items}>
+          {favorites.length === 0 ? (
+            <p className={styles.paragraph}>
+              You have no favorite flowers yet!
+            </p>
+          ) : (
+            favorites.map((favorite) => {
+              const flower = flowers.find((f) => f.id === favorite);
+              if (flower) {
+                return (
+                  <Card
+                    key={flower.id}
+                    name={flower.name}
+                    latinName={flower.latin_name}
+                    profilePicture={flower.profile_picture}
+                    sightings={flower.sightings}
+                    id={flower.id}
+                  />
+                );
+              }
+              return null;
+            })
+          )}
+        </div>
       </div>
     </div>
   );

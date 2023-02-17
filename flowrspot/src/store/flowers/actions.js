@@ -1,8 +1,8 @@
-import { SET_FLOWERS } from "./constants";
+import { ADD_FLOWERS } from "./constants";
 
-export function setFlowers(flowers) {
+export function addFlowers(flowers) {
   return {
-    type: SET_FLOWERS,
+    type: ADD_FLOWERS,
     payload: flowers,
   };
 }

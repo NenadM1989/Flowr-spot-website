@@ -22,7 +22,6 @@ const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   const handleClick = () => {
     if (isFavorite) {
       dispatch(removeFromFavorites(id));
-      console.log("added");
     } else {
       dispatch(addToFavorites(id));
     }

@@ -1,1 +1,1 @@
-export const SET_FLOWERS = "SET_FLOWERS";
+export const ADD_FLOWERS = "ADD_FLOWERS";
