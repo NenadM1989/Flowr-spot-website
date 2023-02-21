@@ -6,17 +6,34 @@ import CardList from "../../components/CardList/CardList";
 import { RandomFlowerList } from "../../services/services";
 import Warning from "../../components/Warning/Warning";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addFlowers } from "../../store/flowers/actions";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const Home = () => {
   const [flowers, setFlowers] = useState([]);
   const [term, setTerm] = useState();
+  const [loading, setLoading] = useState(true);
+
+  const flowerList = useSelector((state) => state.flowers.flowers);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!term) {
-      RandomFlowerList.getFlowers()
-        .then((data) => setFlowers(data.data.flowers))
-        .catch((error) => console.log(error));
+      if (flowerList.length === 0) {
+        RandomFlowerList.getFlowers()
+          .then((data) => {
+            setFlowers(data.data.flowers);
+            dispatch(addFlowers(data.data.flowers));
+            setTimeout(() => setLoading(false), 2000);
+          })
+          .catch((error) => console.log(error));
+      } else {
+        setFlowers(flowerList);
+        setTimeout(() => setLoading(false), 2000);
+      }
     }
+
     if (term) {
       RandomFlowerList.getFlowers()
         .then((data) =>
@@ -26,9 +43,10 @@ const Home = () => {
             )
           )
         )
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
     }
-  }, [term]);
+  }, [term, dispatch, flowers.length]);
 
   const searchSubmit = (value) => {
     setTerm(value);
@@ -47,7 +65,19 @@ const Home = () => {
         </div>
       </div>
       <div className="list">
-        {flowers.length > 0 ? <CardList flowers={flowers} /> : <Warning />}
+        {loading ? (
+          <div className="spinner">
+            <ClipLoader
+              color={"rgb(241, 206, 201)"}
+              loading={loading}
+              size={75}
+            />
+          </div>
+        ) : flowers.length > 0 ? (
+          <CardList flowers={flowers} />
+        ) : (
+          <Warning />
+        )}
       </div>
     </div>
   );
