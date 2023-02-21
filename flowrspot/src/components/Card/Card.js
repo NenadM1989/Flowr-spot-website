@@ -20,10 +20,10 @@ const Card = ({ name, latinName, profilePicture, sightings, id }) => {
   }, []);
 
   const handleClick = () => {
-    if (isFavorite) {
-      dispatch(removeFromFavorites(id));
-    } else {
+    if (!isFavorite) {
       dispatch(addToFavorites(id));
+    } else {
+      dispatch(removeFromFavorites(id));
     }
   };
 
