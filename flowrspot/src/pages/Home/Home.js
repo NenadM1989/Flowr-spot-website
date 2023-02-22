@@ -43,8 +43,7 @@ const Home = () => {
             )
           )
         )
-        .catch((error) => console.log(error))
-        .finally(() => setLoading(false));
+        .catch((error) => console.log(error));
     }
   }, [term, dispatch, flowers.length]);
 
