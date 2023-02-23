@@ -1,0 +1,22 @@
+.personal {
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.info {
+  padding: 10px;
+}
+
+.graph1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  color: #334144;
+}
+
+.graph2 {
+  color: #949ea0;
+  font-size: 13px;
+}

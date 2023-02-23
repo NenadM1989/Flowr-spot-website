@@ -1,0 +1,81 @@
+.login {
+  position: absolute;
+  width: 440px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  z-index: 20;
+  background-color: #ffffff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Ubuntu" sans-serif;
+  justify-content: space-between;
+}
+
+.header {
+  font-size: 20px;
+  color: #334144;
+  margin-bottom: 15px;
+}
+
+.data {
+  display: flex;
+  height: 350px;
+  flex-direction: column;
+  width: 100%;
+}
+
+.data input {
+  margin-bottom: 10px;
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  font-family: "Ubuntu", sans-serif;
+  border: 2px solid #dfe5ea;
+  border-radius: 3px;
+  background-color: #f5f6f7;
+  outline: none;
+}
+
+.login-button {
+  width: 100%;
+  height: 50px;
+}
+
+.button {
+  width: 100%;
+  outline: none;
+  height: 50px;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+  box-shadow: 0px 15px 20px rgba(234, 168, 159, 0.2);
+  border-radius: 3px;
+  font-size: 14px;
+}
+
+.close-login {
+  margin-top: 50px;
+  color: #ffffff;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #949ea0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.errorMessage {
+  text-align: center;
+}

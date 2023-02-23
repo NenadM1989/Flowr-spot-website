@@ -1,0 +1,41 @@
+.card-comments {
+  width: 80%;
+}
+
+.comments-favorites {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  color: #949ea0;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.favorite {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  color: #949ea0;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.comments,
+.heart {
+  color: #d4d8d9;
+}
+
+.p {
+  color: #949ea0;
+}

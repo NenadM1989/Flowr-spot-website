@@ -1,60 +1,55 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
-
-.paragraph {
-  color: #949ea0;
-  font-family: "Ubuntu", sans-serif;
-}
-
 .sightings-container {
-  height: 100%;
+  display: flex;
   width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
 }
 
-.sightings-content {
+.image {
   width: 100%;
-  margin-top: 30px;
+  height: 450px;
+}
+
+.sighting-list {
+  position: absolute;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  width: 96%;
 }
 
-.sightings-title {
-  width: 78%;
-  display: flex;
-  justify-content: center;
+.sighting-text {
+  width: 33%;
 }
 
-.button-add {
-  margin: 0px 10px;
+.p1,
+.p2 {
+  color: #ffffff;
 }
 
-.sightings-explore {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15px;
-}
-
-.first-paragraph {
-  line-height: 40px;
+.p1 {
+  font-size: 35px;
+  font-family: "Ubuntu", sans-serif;
   font-weight: 300;
-  text-align: center;
-  font-size: 40px;
-  line-height: 40px;
+  font-size: 35px;
+  font-style: normal;
 }
 
-.second-paragraph {
-  line-height: 40px;
-  font-weight: 300;
-  text-align: center;
+.p2 {
   font-size: 17px;
-  line-height: 17px;
-  margin-left: -50px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  margin-top: 30px;
 }
 
-.sighting-button {
-  width: 100%;
+.cardsight-list {
   display: flex;
-  justify-content: center;
-  margin-top: 35px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 30px;
 }

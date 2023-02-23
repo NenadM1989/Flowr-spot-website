@@ -1,9 +1,18 @@
-import React from "react";
-import "./Navbar.css";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
+import image from "../../images/profile-picture.png";
 
-const Navbar = () => {
+const Navbar = ({ funct, func, openProfile }) => {
+  const [log, setLog] = useState();
+
+  const token = localStorage.getItem("auth_token");
+
+  useEffect(() => {
+    setLog(!!token);
+  }, [token]);
+
   return (
     <nav className="navbar">
       <Link to="/">
@@ -19,12 +28,49 @@ const Navbar = () => {
         <Link to="/favorites" className="favorites">
           <li>Favorites</li>
         </Link>
-        <Link to="/nenad/" className="login">
-          <li>Login</li>
-        </Link>
-        <li>
-          <button className="button">New Account</button>
-        </li>
+        {!log && (
+          <>
+            <Link
+              to="/"
+              onClick={() => {
+                funct(true);
+              }}
+              className="login"
+            >
+              <li>Login</li>
+            </Link>
+            <li>
+              <button
+                onClick={() => {
+                  func(true);
+                }}
+                className="button"
+              >
+                New Account
+              </button>
+            </li>
+          </>
+        )}
+        {log && (
+          <>
+            <Link
+              onClick={() => {
+                funct(true);
+              }}
+              className="navbar-item-login"
+              to="/"
+            >
+              John Doe
+            </Link>
+            <Link to="/">
+              <img
+                onClick={() => openProfile(true)}
+                src={image}
+                className="navbar-image-login"
+              />
+            </Link>
+          </>
+        )}
       </ul>
     </nav>
   );
