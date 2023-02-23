@@ -11,7 +11,6 @@ const Navbar = ({ funct, func, openProfile }) => {
 
   useEffect(() => {
     setLog(!!token);
-    //console.log("ovo je token", token);
   }, [token]);
 
   return (
