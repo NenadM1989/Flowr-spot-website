@@ -58,7 +58,7 @@ const App = () => {
         {openLogin && (
           <Modal onClose={() => setOpenProfile(false)}>
             <Suspense fallback={<div>Loading...</div>}>
-              <Profile funct={setisLoginHandler} funcLog={setLoggedHandler} />
+              <Login funct={openModalLoginHandler} />
             </Suspense>
           </Modal>
         )}

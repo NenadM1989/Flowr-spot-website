@@ -2,12 +2,9 @@ import React from "react";
 import styles from "./LikeButton.module.css";
 
 const LikeButton = () => {
-  const handleClick = () => {
-    console.log("Click occurred!");
-  };
   return (
     <>
-      <div className={styles.favorite} onClick={handleClick}>
+      <div className={styles.favorite}>
         <i className={`${styles.fa} ${styles["fa-star"]} ${styles.star}`}></i>
       </div>
     </>

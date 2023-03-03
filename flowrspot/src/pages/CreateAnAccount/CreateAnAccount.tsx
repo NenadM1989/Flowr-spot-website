@@ -40,6 +40,7 @@ const CreateAnAccount = ({ func }: CreateAnAccountProps) => {
     };
     try {
       const response = await AuthService.postRegister(data);
+      console.log(response.data);
       localStorage.setItem("token", response.data.auth_token);
       console.log(response.data.auth_token);
     } catch (err) {
