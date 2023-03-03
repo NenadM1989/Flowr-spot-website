@@ -1,9 +1,6 @@
 import { ADD_FLOWERS } from "./constants";
 import { AnyAction } from "redux";
-
-interface FlowersState {
-  flowers: Array<string>;
-}
+import { FlowersState } from "../../types/types";
 
 const initialState: FlowersState = { flowers: [] };
 

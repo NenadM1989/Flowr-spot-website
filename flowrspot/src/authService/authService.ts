@@ -1,13 +1,11 @@
 import axios from "axios";
 import { URL } from "../URL";
+import { RegisterData, LoginData } from "../types/types";
 
 export class AuthService {
-  static async postRegister(data: any): Promise<any> {
+  public static async postRegister(data: RegisterData) {
     try {
-      const response = await axios.post(
-        "https://flowrspot-api.herokuapp.com/api/v1/users/register",
-        data
-      );
+      const response = await axios.post(`${URL}/users/register`, data);
       return response;
     } catch (err) {
       console.log("Error occurred", err);
@@ -15,12 +13,9 @@ export class AuthService {
     }
   }
 
-  static async postLogin(data: any): Promise<any> {
+  public static async postLogin(data: LoginData) {
     try {
-      const response = await axios.post(
-        "https://flowrspot-api.herokuapp.com/api/v1/users/login",
-        data
-      );
+      const response = await axios.post(`${URL}/users/login`, data);
       return response;
     } catch (err) {
       console.log("Error occurred", err);

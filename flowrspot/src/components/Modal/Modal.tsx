@@ -1,10 +1,6 @@
 import React from "react";
 import styles from "./Modal.module.css";
-
-interface ModalProps {
-  children: React.ReactNode;
-  onClose: () => void;
-}
+import { ModalProps } from "../../types/types";
 
 const Modal = ({ children, onClose }: ModalProps) => {
   return (

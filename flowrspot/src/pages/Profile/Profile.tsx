@@ -1,11 +1,7 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import image from "../../images/profile-picture.png";
-
-interface ProfileProps {
-  funct: (arg: boolean) => void;
-  funcLog: (arg: boolean) => void;
-}
+import { ProfileProps } from "../../types/types";
 
 const Profile = ({ funct, funcLog }: ProfileProps) => {
   const handleClick = () => {

@@ -1,14 +1,7 @@
 import React from "react";
 import Card from "../Card/Card";
 import styles from "./CardList.module.css";
-
-interface Flower {
-  id: number;
-  name: string;
-  latin_name: string;
-  profile_picture: string;
-  sightings: number;
-}
+import { Flower } from "../../types/types";
 
 interface CardListProps {
   flowers: Flower[];

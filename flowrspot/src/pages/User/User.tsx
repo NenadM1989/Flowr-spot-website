@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../pages/User/User.module.css";
 import ReportButton from "../../components/Buttons/ReportButton";
-//import CardSighting from "../../components/CardSighting/CardSighting";
 import ProfilePicture from "../../components/ProfilePicture/ProfilePicture";
 
 const User = () => {
