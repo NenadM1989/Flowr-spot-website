@@ -3,10 +3,7 @@ import "../../components/CardSighting/CardSighting.css";
 import { Link } from "react-router-dom";
 import ProfilePicture from "../ProfilePicture/ProfilePicture";
 import CardComments from "../CardComments/CardComments";
-
-type CardSightingProps = {
-  picture: string;
-};
+import { CardSightingProps } from "../../types/types";
 
 const CardSighting = ({ picture }: CardSightingProps) => {
   return (

@@ -5,17 +5,7 @@ import hero from "../../images/hero-sightings.png";
 import LikeButton from "../../components/Buttons/LikeButton";
 import linebreak from "../../images/linebreak.png";
 import { RandomFlowerList } from "../../services/services";
-
-interface Params {
-  id: string;
-}
-
-interface FlowerInfo {
-  name: string;
-  latin_name: string;
-  profile_picture: string;
-  sightings: number;
-}
+import { Params, FlowerInfo } from "../../types/types";
 
 const FlowerDetail = () => {
   const params = useParams<Params>();

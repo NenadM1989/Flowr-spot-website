@@ -1,11 +1,6 @@
-import React, { ReactNode } from "react";
+import React from "react";
+import { ButtonProps } from "../../types/types";
 import styles from "../Buttons/ReportButton.module.css";
-
-interface ButtonProps {
-  children: ReactNode;
-  color: string;
-  background: string;
-}
 
 const ReportButton = ({ children, color, background }: ButtonProps) => {
   return (

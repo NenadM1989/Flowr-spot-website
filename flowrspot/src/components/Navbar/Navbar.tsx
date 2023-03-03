@@ -1,15 +1,9 @@
-import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import flowerspot from "../../images/flowerspot.png";
 import image from "../../images/profile-picture.png";
-
-type NavbarProps = {
-  func: (boolean: boolean) => void;
-  funct: (boolean: boolean) => void;
-  log: (boolean: boolean) => void;
-  openProfile: Dispatch<SetStateAction<boolean>>;
-};
+import { NavbarProps } from "../../types/types";
 
 const Navbar = ({ func, funct, openProfile }: NavbarProps) => {
   const [log, setLog] = useState(false);

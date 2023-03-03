@@ -1,9 +1,6 @@
 import React from "react";
 import "../CardComments/CardComments.css";
-
-interface CardCommentsProps {
-  width: string;
-}
+import { CardCommentsProps } from "../../types/types";
 
 const CardComments = ({ width }: CardCommentsProps) => {
   return (

@@ -7,14 +7,7 @@ import {
   removeFromFavorites,
 } from "../../store/favorite/actions";
 import { RootState } from "../../types/types";
-
-interface CardProps {
-  name: string;
-  latinName: string;
-  profilePicture: string;
-  sightings: number;
-  id: number;
-}
+import { CardProps } from "../../types/types";
 
 const Card = ({
   name,
