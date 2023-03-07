@@ -18,7 +18,6 @@ const Profile = lazy(() => import("./pages/Profile/Profile"));
 const SightingDetail = lazy(
   () => import("./pages/SightingDetail/SightingDetail")
 );
-const SingleFlower = lazy(() => import("./pages/SingleFlower/SingleFlower"));
 
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -94,11 +93,7 @@ const App = () => {
                 <Profile funct={setisLoginHandler} funcLog={setLoggedHandler} />
               )}
             />
-            <Route
-              path="/singleflower"
-              exact
-              component={() => <SingleFlower />}
-            />
+
             <Route path="/*" exact component={() => <ErrorPage />} />
           </Switch>
         </Suspense>

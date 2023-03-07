@@ -5,7 +5,6 @@ import Search from "../../components/Search/Search";
 import CardList from "../../components/CardList/CardList";
 import { RandomFlowerList } from "../../services/services";
 import Warning from "../../components/Warning/Warning";
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addFlowers } from "../../store/flowers/actions";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -27,12 +26,12 @@ const Home = () => {
           .then((data) => {
             setFlowers(data.data.flowers);
             dispatch(addFlowers(data.data.flowers));
-            setTimeout(() => setLoading(false), 2000);
+            setTimeout(() => setLoading(false), 1000);
           })
           .catch((error) => console.log(error));
       } else {
         setFlowers(flowerList);
-        setTimeout(() => setLoading(false), 2000);
+        setTimeout(() => setLoading(false), 1000);
       }
     }
 
@@ -58,9 +57,7 @@ const Home = () => {
       <div className="hero-image">
         <img className="hero-image-picture" src={image} />
         <div className="hero-content">
-          <Link to="/singleflower">
-            <h1>Discover flowers around you</h1>
-          </Link>
+          <h1>Discover flowers around you</h1>
           <p className="explore">Explore between more than 8.427 sightings</p>
           <Search onSubmit={searchSubmit} />
         </div>

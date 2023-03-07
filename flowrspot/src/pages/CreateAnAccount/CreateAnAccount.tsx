@@ -6,13 +6,13 @@ import { validEmail, validPassword } from "../../Regex";
 import { CreateAnAccountProps } from "../../types/types";
 
 const CreateAnAccount = ({ func }: CreateAnAccountProps) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [date, setDate] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [showCreateAcc, setShowCreateAcc] = useState(true);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [firstName, setFirstName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [date, setDate] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [showCreateAcc, setShowCreateAcc] = useState<boolean>(true);
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
