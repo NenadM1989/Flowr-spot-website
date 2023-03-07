@@ -1,8 +1,8 @@
 import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "./constants";
 import { AnyAction } from "redux";
-import { FavoritesState } from "../../types/types";
+import { IFavoritesState } from "../../types/types";
 
-const initialState: FavoritesState = { favorites: [] };
+const initialState: IFavoritesState = { favorites: [] };
 
 const favoritesReducer = (state = initialState, action: AnyAction) => {
   const { type, payload } = action;

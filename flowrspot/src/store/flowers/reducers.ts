@@ -1,8 +1,8 @@
 import { ADD_FLOWERS } from "./constants";
 import { AnyAction } from "redux";
-import { FlowersState } from "../../types/types";
+import { IFlowersState } from "../../types/types";
 
-const initialState: FlowersState = { flowers: [] };
+const initialState: IFlowersState = { flowers: [] };
 
 const flowerReducer = (state = initialState, action: AnyAction) => {
   switch (action.type) {

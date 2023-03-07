@@ -3,11 +3,11 @@ import Search from "../../components/Search/Search";
 import styles from "../Flowers/Flowers.module.css";
 import Card from "../../components/Card/Card";
 import { RandomFlowerList } from "../../services/services";
-import { Flower } from "../../types/types";
+import { IFlower } from "../../types/types";
 
 const Flowers = () => {
-  const [flowers, setFlowers] = useState<Flower[]>([]);
-  const [filteredFlowers, setFilteredFlowers] = useState<Flower[]>([]);
+  const [flowers, setFlowers] = useState<IFlower[]>([]);
+  const [filteredFlowers, setFilteredFlowers] = useState<IFlower[]>([]);
 
   useEffect(() => {
     RandomFlowerList.getFlowers()

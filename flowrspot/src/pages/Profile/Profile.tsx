@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./Profile.module.css";
 import image from "../../images/profile-picture.png";
-import { ProfileProps } from "../../types/types";
+import { IProfileProps } from "../../types/types";
 
-const Profile = ({ funct, funcLog }: ProfileProps) => {
+const Profile = ({ funct, funcLog }: IProfileProps) => {
   const handleClick = () => {
     funct(false);
     funcLog(false);

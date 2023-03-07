@@ -7,7 +7,7 @@ import {
   removeFromFavorites,
 } from "../../store/favorite/actions";
 import { RootState } from "../../types/types";
-import { CardProps } from "../../types/types";
+import { ICardProps } from "../../types/types";
 
 const Card = ({
   name,
@@ -15,7 +15,7 @@ const Card = ({
   profilePicture,
   sightings,
   id,
-}: CardProps) => {
+}: ICardProps) => {
   const [log, setLog] = useState(false);
   const navigateTo = useHistory();
   const dispatch = useDispatch();

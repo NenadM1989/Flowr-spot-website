@@ -1,10 +1,10 @@
 import React from "react";
 import Card from "../Card/Card";
 import styles from "./CardList.module.css";
-import { Flower } from "../../types/types";
+import { IFlower } from "../../types/types";
 
 interface CardListProps {
-  flowers: Flower[];
+  flowers: IFlower[];
 }
 
 const CardList = ({ flowers }: CardListProps) => {

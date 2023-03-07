@@ -5,11 +5,11 @@ export interface RootState {
     favorites: number[];
   };
   flowers: {
-    flowers: Flower[];
+    flowers: IFlower[];
   };
 }
 
-export interface Flower {
+export interface IFlower {
   id: number;
   name: string;
   latin_name: string;
@@ -24,35 +24,35 @@ export type NavbarProps = {
   openProfile: Dispatch<SetStateAction<boolean>>;
 };
 
-export interface FavoritesState {
+export interface IFavoritesState {
   favorites: Array<string>;
 }
 
-export interface FlowersState {
+export interface IFlowersState {
   flowers: Array<string>;
 }
 
-export interface ProfileProps {
+export interface IProfileProps {
   funct: (arg: boolean) => void;
   funcLog: (arg: boolean) => void;
 }
 
-export interface Params {
+export interface IParams {
   id: string;
 }
 
-export interface FlowerInfo {
+export interface IFlowerInfo {
   name: string;
   latin_name: string;
   profile_picture: string;
   sightings: number;
 }
 
-export interface CreateAnAccountProps {
+export interface ICreateAnAccountProps {
   func: (arg: boolean) => void;
 }
 
-export interface ModalProps {
+export interface IModalProps {
   children: React.ReactNode;
   onClose: () => void;
 }
@@ -62,14 +62,14 @@ export type CardSightingProps = {
 };
 
 export interface CardListProps {
-  flowers: Flower[];
+  flowers: IFlower[];
 }
 
-export interface CardCommentsProps {
+export interface ICardCommentsProps {
   width: string;
 }
 
-export interface CardProps {
+export interface ICardProps {
   name: string;
   latinName: string;
   profilePicture: string;
@@ -77,13 +77,13 @@ export interface CardProps {
   id: number;
 }
 
-export interface ButtonProps {
+export interface IButtonProps {
   children: ReactNode;
   color: string;
   background: string;
 }
 
-export interface RegisterData {
+export interface IRegisterData {
   email: string;
   password: string;
   first_name: string;
@@ -91,7 +91,7 @@ export interface RegisterData {
   date_of_birth: string;
 }
 
-export interface LoginData {
+export interface ILoginData {
   email: string;
   password: string;
 }

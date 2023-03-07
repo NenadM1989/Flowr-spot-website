@@ -1,8 +1,8 @@
 import React from "react";
 import "../CardComments/CardComments.css";
-import { CardCommentsProps } from "../../types/types";
+import { ICardCommentsProps } from "../../types/types";
 
-const CardComments = ({ width }: CardCommentsProps) => {
+const CardComments = ({ width }: ICardCommentsProps) => {
   return (
     <div className="card-comments">
       <div className="comments-favorites" style={{ width }}>

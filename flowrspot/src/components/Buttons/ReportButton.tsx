@@ -1,8 +1,8 @@
 import React from "react";
-import { ButtonProps } from "../../types/types";
+import { IButtonProps } from "../../types/types";
 import styles from "../Buttons/ReportButton.module.css";
 
-const ReportButton = ({ children, color, background }: ButtonProps) => {
+const ReportButton = ({ children, color, background }: IButtonProps) => {
   return (
     <div className={styles["report-button"]}>
       <button style={{ color, background }} className={styles.button}>

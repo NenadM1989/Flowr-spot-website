@@ -3,9 +3,9 @@ import styles from "./CreateAnAccount.module.css";
 import Modal from "../../components/Modal/Modal";
 import { AuthService } from "../../authService/authService";
 import { validEmail, validPassword } from "../../Regex";
-import { CreateAnAccountProps } from "../../types/types";
+import { ICreateAnAccountProps } from "../../types/types";
 
-const CreateAnAccount = ({ func }: CreateAnAccountProps) => {
+const CreateAnAccount = ({ func }: ICreateAnAccountProps) => {
   const [firstName, setFirstName] = useState<string>("");
   const [lastName, setLastName] = useState<string>("");
   const [date, setDate] = useState<string>("");

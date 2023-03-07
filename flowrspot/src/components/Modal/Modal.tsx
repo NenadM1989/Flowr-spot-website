@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Modal.module.css";
-import { ModalProps } from "../../types/types";
+import { IModalProps } from "../../types/types";
 
-const Modal = ({ children, onClose }: ModalProps) => {
+const Modal = ({ children, onClose }: IModalProps) => {
   return (
     <div>
       <div className={styles.overlay} onClick={onClose}></div>

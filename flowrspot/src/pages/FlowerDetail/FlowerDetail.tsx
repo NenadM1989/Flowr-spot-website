@@ -4,11 +4,11 @@ import styles from "../../pages/FlowerDetail/FlowerDetail.module.css";
 import star from "../../images/star.png";
 import linebreak from "../../images/linebreak.png";
 import { RandomFlowerList } from "../../services/services";
-import { Params, FlowerInfo } from "../../types/types";
+import { IParams, IFlowerInfo } from "../../types/types";
 
 const FlowerDetail = () => {
-  const params = useParams<Params>();
-  const [flowerInfo, setFlowerInfo] = useState<FlowerInfo | undefined>();
+  const params = useParams<IParams>();
+  const [flowerInfo, setFlowerInfo] = useState<IFlowerInfo | undefined>();
 
   useEffect(() => {
     RandomFlowerList.getFlowerById(params.id).then((res) => {

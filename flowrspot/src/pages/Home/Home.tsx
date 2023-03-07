@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addFlowers } from "../../store/flowers/actions";
 import ClipLoader from "react-spinners/ClipLoader";
 import { RootState } from "../../types/types";
-import { Flower } from "../../types/types";
+import { IFlower } from "../../types/types";
 
 const Home = () => {
   const [flowers, setFlowers] = useState([]);
@@ -40,7 +40,7 @@ const Home = () => {
         .then((data) =>
           setFlowers(
             data.data.flowers.filter(
-              (flower: Flower) => flower.name.toLowerCase() === term
+              (flower: IFlower) => flower.name.toLowerCase() === term
             )
           )
         )
