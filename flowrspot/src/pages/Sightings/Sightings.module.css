@@ -22,8 +22,9 @@
   width: 96%;
 }
 
-.sighting-text {
-  width: 33%;
+.sightings-text {
+  width: 60%;
+  margin-bottom: 2rem;
 }
 
 .p1,
@@ -43,7 +44,6 @@
   font-size: 17px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300;
-  margin-top: 30px;
 }
 
 .cardsight-list {
@@ -52,4 +52,50 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin-top: 30px;
+}
+
+.button {
+  width: 11.75rem;
+  height: 3.2rem;
+  margin-bottom: 3.3rem;
+  margin-right: 1rem;
+  margin-top: 3rem;
+  background: linear-gradient(270deg, #ecbcb3 0%, #eaa79e 100%);
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  color: #ffffff;
+}
+
+@media (max-width: 400px) {
+  .sighting-list {
+    flex-direction: column;
+  }
+
+  .sightings-text {
+    width: 60%;
+    margin: auto;
+    align-items: center;
+    text-align: center;
+  }
+  .sightings-text,
+  .button {
+    margin: auto;
+    margin-bottom: 1rem;
+  }
+
+  .p1 {
+    font-size: 30px;
+    margin-bottom: 1rem;
+  }
+
+  .p2 {
+    font-size: 14px;
+  }
 }

@@ -88,3 +88,11 @@
   font-size: 1rem;
   cursor: pointer;
 }
+.closed {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  color: #949ea0;
+  font-size: 1rem;
+  cursor: pointer;
+}

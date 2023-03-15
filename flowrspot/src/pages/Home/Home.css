@@ -18,7 +18,7 @@
 
 .hero-content {
   position: absolute;
-  width: 45%;
+  width: 75%;
   color: white;
   top: 40%;
   left: 50%;
@@ -89,4 +89,8 @@ p {
   justify-content: center;
   position: relative;
   top: 80px;
+}
+
+.explore {
+  white-space: nowrap;
 }

@@ -7,6 +7,7 @@ import { NavbarProps } from "../../types/types";
 
 const Navbar = ({ func, funct, openProfile }: NavbarProps) => {
   const [log, setLog] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const token = localStorage.getItem("auth_token");
 
@@ -14,19 +15,30 @@ const Navbar = ({ func, funct, openProfile }: NavbarProps) => {
     setLog(!!token);
   }, [token]);
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const closeMenu = () => {
+    setShowMenu(false);
+  };
+
   return (
     <nav className="navbar">
       <Link to="/">
-        <img src={flowerspot} alt="logo" height={30} width={169}></img>
+        <img src={flowerspot} alt="logo" height={30} width={169} />
       </Link>
-      <ul className="nav-links">
-        <Link to="/flowers" className="flowers">
+      <div className="menu-icon" onClick={toggleMenu}>
+        <i className={showMenu ? "fas fa-times" : "fas fa-bars"} />
+      </div>
+      <ul className={`nav-links ${showMenu ? "show" : ""}`}>
+        <Link to="/flowers" className="flowers" onClick={closeMenu}>
           <li>Flowers</li>
         </Link>
-        <Link to="/sightings" className="sightings">
+        <Link to="/sightings" className="sightings" onClick={closeMenu}>
           <li>Latest Sightings</li>
         </Link>
-        <Link to="/favorites" className="favorites">
+        <Link to="/favorites" className="favorites" onClick={closeMenu}>
           <li>Favorites</li>
         </Link>
         {!log && (
@@ -34,7 +46,7 @@ const Navbar = ({ func, funct, openProfile }: NavbarProps) => {
             <Link
               to="/"
               onClick={() => {
-                funct(true);
+                funct(true), closeMenu;
               }}
               className="login"
             >
@@ -43,7 +55,7 @@ const Navbar = ({ func, funct, openProfile }: NavbarProps) => {
             <li>
               <button
                 onClick={() => {
-                  func(true);
+                  func(true), closeMenu;
                 }}
                 className="button"
               >

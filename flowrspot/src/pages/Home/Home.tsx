@@ -58,7 +58,7 @@ const Home = () => {
         <img className="hero-image-picture" src={image} />
         <div className="hero-content">
           <h1>Discover flowers around you</h1>
-          <p className="explore">Explore between more than 8.427 sightings</p>
+          <h4 className="explore">Explore between more than 8.427 sightings</h4>
           <Search onSubmit={searchSubmit} />
         </div>
       </div>

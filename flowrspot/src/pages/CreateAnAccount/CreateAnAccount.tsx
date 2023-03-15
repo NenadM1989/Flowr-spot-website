@@ -60,6 +60,14 @@ const CreateAnAccount = ({ func }: ICreateAnAccountProps) => {
     showCreateAcc && (
       <Modal onClose={() => setShowCreateAcc(false)}>
         <form className={styles.container} onSubmit={handleSubmit}>
+          <div
+            className={styles.closed}
+            onClick={() => {
+              func(false);
+            }}
+          >
+            &times;
+          </div>
           <h1 className={styles.header}>Create an Account</h1>
           <div className={styles.names}>
             <input
