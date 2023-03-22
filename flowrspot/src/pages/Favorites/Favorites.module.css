@@ -26,4 +26,11 @@
 .paragraph {
   font-size: 1.5rem;
   top: 50px;
+  color: #eaa79e;
+}
+
+@media (max-width: 400px) {
+  .paragraph {
+    font-size: 1rem;
+  }
 }
